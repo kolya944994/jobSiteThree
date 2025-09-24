@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Header from '../../components/header/Header'
 import SearchMenu from '../../components/searchMenu/SearchMenu'
 import SideBar from '../../components/sideBar/SideBar'
-import VacanciesList from '../../components/vacanciesList/VacanciesList'
+
 import { useTypedDispatch, useTypedSelector } from '../../hooks/redux'
 import { requestBySkills } from '../../reducers/MainPageHhSlice'
 import styles from './MainPage.module.css'

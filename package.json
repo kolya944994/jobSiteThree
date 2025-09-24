@@ -1,9 +1,9 @@
 {
-	"name": "jobsite",
+	"name": "jobSiteThree",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://github.com/kolya944994/jobSite",
+	"homepage": "https://github.com/kolya944994/jobSiteThree",
 	"scripts": {
 		"dev": "vite",
 		"predeploy": "npm run build",
