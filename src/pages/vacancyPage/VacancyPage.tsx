@@ -1,23 +1,20 @@
-import { useParams } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
 import Header from '../../components/header/Header'
 import styles from './VacancyPage.module.css'
-import { useEffect, useState } from 'react'
 import VacancyCard from '../../ui/vacancyCard/VacancyCard'
 import VacancyCardContent from '../../modules/vacancyCardContent/VacancyCardContent'
 
+export async function vacancyLoader({ params }: { params: any }) {
+	const res = await fetch(`https://api.hh.ru/vacancies/${params.id}`)
+	if (!res.ok) {
+		throw new Response('Not Found', { status: 404 })
+	} else {
+		return res.json()
+	}
+}
+
 function VacancyPage() {
-	const [vacancy, setVacancy] = useState<any>(null)
-	const { id } = useParams<{ id: string }>()
-
-	useEffect(() => {
-		fetch(`https://api.hh.ru/vacancies/${id}`)
-			.then(res => res.json())
-			.then(data => {
-				console.log('vacancy:', data)
-				setVacancy(data)
-			})
-	}, [id])
-
+	const vacancy = useLoaderData()
 	return (
 		<div>
 			<Header />

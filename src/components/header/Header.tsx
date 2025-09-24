@@ -1,15 +1,16 @@
 import styles from './Header.module.css'
 import logo from '../../assets/logo.svg'
+import { Link } from 'react-router-dom'
 
 function Header() {
 	return (
 		<div className={styles.containerHeader}>
 			<nav className={styles.containerNav}>
 				<div className={styles.logo}>
-					<a href='/' className={styles.linkLogo}>
+					<Link to='/' className={styles.linkLogo}>
 						<img src={logo} alt='Логотип Hh' />
 						<h3 className={styles.textLogo}>.FrontEnd</h3>
-					</a>
+					</Link>
 				</div>
 				<div className={styles.headerMenu}>
 					<a href=''>

@@ -7,6 +7,8 @@ import { useTypedDispatch, useTypedSelector } from '../../hooks/redux'
 import { requestBySkills } from '../../reducers/MainPageHhSlice'
 import styles from './MainPage.module.css'
 import MyPagination from '../../components/pagination/MyPagination'
+import CityTabs from '../../components/tabsCity/TabsCity'
+import { Outlet } from 'react-router-dom'
 
 function MainPage() {
 	const { skills, area, page, searchValue } = useTypedSelector(
@@ -25,7 +27,9 @@ function MainPage() {
 			<div className={styles.containerLayout}>
 				<SideBar></SideBar>
 				<div className={styles.positionVacancyAndPag}>
-					<VacanciesList></VacanciesList>
+					<CityTabs />
+					<Outlet />
+
 					<MyPagination></MyPagination>
 				</div>
 			</div>
